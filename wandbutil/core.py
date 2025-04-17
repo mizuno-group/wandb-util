@@ -5,6 +5,7 @@ Wandb用のユーティリティ
 
 @author: mizuno-group
 """
+import wandb
 
 class WandbLogger:
     def __init__(self, entity=None, project=None, group=None, name=None, config=None, **kwargs):
