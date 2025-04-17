@@ -42,7 +42,13 @@ class WandbLogger:
         self.run = None
         try:
             self.run = wandb.init(
-                entity=entity, project=project, group=group, name=name, config=config, **kwargs
+                entity=entity,
+                project=project,
+                group=group,
+                name=name,
+                config=config,
+                reinit=True, # reinit=True is needed to reinitialize wandb
+                **kwargs
                 )
             # note: wandb.init returns run instance
         except Exception as e:
@@ -56,6 +62,7 @@ class WandbLogger:
     def finish(self):
         if self.run:
             self.run.finish()
+            self.run = None # clear run instance
 
 
 class CallbackHandler:
