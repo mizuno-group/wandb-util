@@ -2,7 +2,7 @@ import os
 import re
 from setuptools import setup, find_packages
 
-# 0. pythonバージョンを指定
+# 0. python version
 description = "a template for an original package" # need to update
 python_ver = "3.10" # need to check
 
@@ -64,8 +64,6 @@ if package_name is None:
     raise FileNotFoundError("No valid package found in the current directory.")
 
 # 3. Define the setup function
-# modify entry_points to use command line if needed
-# {COMMAND NAME}={module path}:{function in the module}
 setup(
     name=f"{package_name}",
     version=f"{get_version()}",

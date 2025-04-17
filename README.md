@@ -6,8 +6,10 @@ WandBを扱う上でのユーティリティ.
 ```pip install git+https://github.com/mizuno-group/wandb-util.git```
 
 2. **初期化.**  
-呼び出し時にwandb.init(...)がコンストラクタで走る.  
+wandb.init(...)がコンストラクタで走る.  
     ```
+    from wandbutil import WandbLogger
+
     logger = WandbLogger(
         entity="aaa", # 自身の共有用teams, ヒト単位 ★ここを共有する
         project="bbb", # Wandbのproject, 研究・テーマ単位
